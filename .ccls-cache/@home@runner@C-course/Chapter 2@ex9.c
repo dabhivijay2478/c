@@ -1,22 +1,15 @@
+
 #include <stdio.h>
-int fasterBitCount(unsigned int x);
-int main() {
-  unsigned int number = 2605; 
 
-  int count = fasterBitCount(number);
+int bitcount(unsigned x);
 
-  printf("Number of set bits in %u: %d\n", number, count);
+int main(void) { printf("%d", bitcount((unsigned)12)); }
 
-  return 0;
-}
+int bitcount(unsigned x) {
+  int b;
 
-int fasterBitCount(unsigned int x) {
-  int count = 0;
+  for (b = 0; x != 0; x &= x - 1)
+    ++b;
 
-  while (x != 0) {
-    x &= (x - 1);
-    count++;
-  }
-
-  return count;
+  return b;
 }

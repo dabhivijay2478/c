@@ -3,7 +3,6 @@
 void convertToLowercase(char *str);
 
 int main() {
-  // Example usage
   char uppercaseString[] = "VIJAY DABHI";
   printf("Original string: %s\n", uppercaseString);
 
